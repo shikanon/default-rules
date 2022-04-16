@@ -1,0 +1,24 @@
+# permissions for end users to edit simpleautoscalers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: simpleautoscaler-editor-role
+rules:
+- apiGroups:
+  - namespace.rules.default-rules.dev.tensorbytes.com
+  resources:
+  - simpleautoscalers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - namespace.rules.default-rules.dev.tensorbytes.com
+  resources:
+  - simpleautoscalers/status
+  verbs:
+  - get

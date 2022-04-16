@@ -1,0 +1,14 @@
+domain: default-rules.dev.tensorbytes.com
+layout: go.kubebuilder.io/v3
+projectName: default-rules
+repo: github.com/shikanon/default-rules
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: default-rules.dev.tensorbytes.com
+  group: namespace.rules
+  kind: SimpleAutoScaler
+  path: github.com/shikanon/default-rules/api/v1alpha1
+  version: v1alpha1
+version: "3"

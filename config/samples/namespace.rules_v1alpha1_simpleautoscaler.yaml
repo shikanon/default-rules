@@ -1,0 +1,7 @@
+apiVersion: namespace.rules.default-rules.dev.tensorbytes.com/v1alpha1
+kind: SimpleAutoScaler
+metadata:
+  name: simpleautoscaler-sample
+spec:
+  # Add fields here
+  foo: bar

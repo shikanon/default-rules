@@ -1,0 +1,20 @@
+# permissions for end users to view simpleautoscalers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: simpleautoscaler-viewer-role
+rules:
+- apiGroups:
+  - namespace.rules.default-rules.dev.tensorbytes.com
+  resources:
+  - simpleautoscalers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - namespace.rules.default-rules.dev.tensorbytes.com
+  resources:
+  - simpleautoscalers/status
+  verbs:
+  - get
