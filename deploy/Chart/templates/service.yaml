@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "default-rules.fullname" . }}
+  labels:
+    app: {{ include "default-rules.fullname" . }}
+    {{- include "default-rules.labels" . | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: https
+  selector:
+    app: {{ include "default-rules.fullname" . }}
+    {{- include "default-rules.labels" . | nindent 4 }}
